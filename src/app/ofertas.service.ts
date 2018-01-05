@@ -56,7 +56,14 @@ export class OfertasService {
 
 
     public getOfertas() : Oferta[] {
+         return  this.ofertas;
+    }
+
+
+    public getOfertas2() : Promise<Oferta[]> {
       
-        return  this.ofertas;
+        return  new Promise((resolve,reject) => {
+            resolve(this.ofertas);
+        });
     }
 }
