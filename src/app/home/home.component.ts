@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
+import { Oferta } from '../shared/oferta.model';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { OfertasService } from '../ofertas.service';
 })
 export class HomeComponent implements OnInit {
 
-  public ofertas: any;
+  public ofertas: Oferta[];
 
   constructor(private ofertasService: OfertasService) { }
 
