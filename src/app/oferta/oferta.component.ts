@@ -14,7 +14,11 @@ export class OfertaComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('id',this.route.snapshot.params['id']);
+    //console.log('id',this.route.snapshot.params['id']);
+
+   /* this.route.params.subscribe((parametro: any) => {
+      console.log(parametro.id);
+    });*/
   }
 
 }
