@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComoFicaComponent } from './como-fica.component';
+import { OndeFicaComponent } from './onde-fica.component';
 
-describe('ComoFicaComponent', () => {
-  let component: ComoFicaComponent;
-  let fixture: ComponentFixture<ComoFicaComponent>;
+describe('OndeFicaComponent', () => {
+  let component: OndeFicaComponent;
+  let fixture: ComponentFixture<OndeFicaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ComoFicaComponent ]
+      declarations: [ OndeFicaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ComoFicaComponent);
+    fixture = TestBed.createComponent(OndeFicaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
