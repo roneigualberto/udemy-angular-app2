@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 
 import { Oferta } from './shared/oferta.model';
 
+import 'rxjs/add/operator/toPromise';
+
 @Injectable()
 export class OfertasService {
 
@@ -63,35 +65,14 @@ export class OfertasService {
 
 
 
-    public getOfertas() : Oferta[] {
-         return  this.ofertas;
+    public getOfertas() : Promise<Oferta[]> {
+
+        return  this.http
+         .get('http://localhost:3000/ofertas')
+         .toPromise()
+         .then( (response: any) => response.json());
     }
 
 
-    public getOfertas2() : Promise<Oferta[]> {
-        return  new Promise((resolve,reject) => {
-
-            let deu_certo = true;
-
-            if (deu_certo) {
-                setTimeout(() => resolve(this.ofertas), 3000);
-            } else {
-                reject({codigo_erro: 404, mensagem_erro: 'Servidor não encontrado'});
-            }
-            
-        })
-        .then((ofertas: Oferta[]) => {
-            console.log('primeiro then');
-            return ofertas;
-        }) 
-        .then((ofertas: Oferta[]) => {
-            console.log('segundo then');
-            return new Promise<Oferta[]>((resolve2,reject2) => {
-                resolve2(ofertas);
-            });
-        })
-        .then((ofertas: Oferta[])=> {
-                return ofertas;
-        });
-    }
+   
 }
