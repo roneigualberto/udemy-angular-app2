@@ -71,6 +71,19 @@ export class OfertasService {
                 reject({codigo_erro: 404, mensagem_erro: 'Servidor não encontrado'});
             }
             
+        })
+        .then((ofertas: Oferta[]) => {
+            console.log('primeiro then');
+            return ofertas;
+        }) 
+        .then((ofertas: Oferta[]) => {
+            console.log('segundo then');
+            return new Promise<Oferta[]>((resolve2,reject2) => {
+                resolve2(ofertas);
+            });
+        })
+        .then((ofertas: Oferta[])=> {
+                return ofertas;
         });
     }
 }
