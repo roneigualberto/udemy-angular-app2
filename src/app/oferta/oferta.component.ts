@@ -41,31 +41,11 @@ export class OfertaComponent implements OnInit {
 
         });
       }*/
-       let tempo = Observable.interval(2000)
-
-      this.tempoObservableSubscription =  tempo.subscribe((intervalo: number) => {
-          console.log(intervalo);
-       });
-
-       let meuObservableTeste = Observable.create((observer: Observer<string>) => {
-
-           observer.next('Primeiro evento da stream');
-
-           observer.error('Aconteceu um erro');
-
-           observer.complete();
-
-       });
-
-      this.meuObservableTesteSubscription =  meuObservableTeste.subscribe(  
-         (resultado: any) => console.log(resultado),
-          (erro: string)  => console.log(erro)
-        );
+      
     }
 
     public onDestroy(): void {
-      this.meuObservableTesteSubscription.unsubscribe();
-      this.tempoObservableSubscription.unsubscribe();
+      
     }
   
 }
