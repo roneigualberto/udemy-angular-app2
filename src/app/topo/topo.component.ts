@@ -16,6 +16,7 @@ import   'rxjs/add/operator/debounceTime';
 export class TopoComponent implements OnInit {
 
   public ofertas: Observable<Oferta[]>;
+  public ofertas2: Oferta[];
   public subjectPesquisa: Subject<string> = new Subject<string>();
 
   constructor(private ofertasService: OfertasService) { }
@@ -38,6 +39,7 @@ export class TopoComponent implements OnInit {
     });
 
     this.ofertas.subscribe((ofertas: Oferta[]) => {
+      this.ofertas2 = ofertas;
         console.log(ofertas);
     });
   }
