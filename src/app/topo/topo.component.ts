@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '@angular/router/src/events';
 
+import {OfertasService} from "../ofertas.service";
+
 @Component({
   selector: 'app-topo',
   templateUrl: './topo.component.html',
@@ -8,13 +10,14 @@ import { Event } from '@angular/router/src/events';
 })
 export class TopoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ofertasService: OfertasService) { }
 
   ngOnInit() {
   }
 
   public pesquisa(termoDaPesquisa): void {
       console.log(termoDaPesquisa); 
+
   }
 
 }

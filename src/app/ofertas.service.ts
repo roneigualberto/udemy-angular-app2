@@ -6,6 +6,9 @@ import { environment } from '../environments/environment';
 import { Oferta } from './shared/oferta.model';
 
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
+
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class OfertasService {
@@ -53,6 +56,12 @@ export class OfertasService {
                 .then((resposta: any) => {
                    return  resposta.json().descricao;
                 });
+    }
+
+    public pesquisaOfertas(termo: string): Observable<Oferta[]> {
+        return this.http
+            .get(`${this.baseUrl}?descricao_oferta=${termo}`)
+            .map((response) => response.json());
     }
 
 
