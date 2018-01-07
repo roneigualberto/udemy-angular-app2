@@ -60,8 +60,8 @@ export class OfertasService {
 
     public pesquisaOfertas(termo: string): Observable<Oferta[]> {
         return this.http
-            .get(`${this.baseUrl}?descricao_oferta=${termo}`)
-            .map((response) => response.json());
+            .get(`${this.baseUrl}?descricao_oferta_like=${termo}`)
+            .map((response: any) => response.json());
     }
 
 
