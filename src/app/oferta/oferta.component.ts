@@ -48,9 +48,16 @@ export class OfertaComponent implements OnInit {
 
            observer.next('Primeiro evento da stream');
 
+           observer.error('Aconteceu um erro');
+
+           observer.complete();
+
        });
 
-       meuObservableTeste.subscribe((resultado: any) => console.log(resultado));
+       meuObservableTeste.subscribe(  
+         (resultado: any) => console.log(resultado),
+          (erro: string)  => console.log(erro)
+        );
     }
   
 }
