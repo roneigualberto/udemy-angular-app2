@@ -5,8 +5,8 @@ import {OfertasService} from "../ofertas.service";
 import {Oferta}  from '../shared/oferta.model';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import   'rxjs/add/operator/switchMap';
-import   'rxjs/add/operator/debounceTime';
+
+import '../util/rxjs-extensions';
 @Component({
   selector: 'app-topo',
   templateUrl: './topo.component.html',
