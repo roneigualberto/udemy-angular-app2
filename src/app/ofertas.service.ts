@@ -7,6 +7,7 @@ import { Oferta } from './shared/oferta.model';
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/retry';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -61,6 +62,7 @@ export class OfertasService {
     public pesquisaOfertas(termo: string): Observable<Oferta[]> {
         return this.http
             .get(`${this.baseUrl}?descricao_oferta_like=${termo}`)
+            .retry(10)
             .map((response: any) => response.json());
     }
 
