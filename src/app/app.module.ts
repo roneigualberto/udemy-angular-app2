@@ -14,7 +14,6 @@ import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
-import { ComoFicaComponent } from './oferta/como-fica/como-fica.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 
 
@@ -29,7 +28,6 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
     DiversaoComponent,
     OfertaComponent,
     ComoUsarComponent,
-    ComoFicaComponent,
     OndeFicaComponent
   ],
   imports: [
