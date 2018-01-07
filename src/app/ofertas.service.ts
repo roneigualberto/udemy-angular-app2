@@ -39,6 +39,15 @@ export class OfertasService {
         .then( (response: any) => response.json());
     }
 
+    public getComoUsarOfertaPorId(id: number): Promise<string> {
+        return this.http.get(`${environment.baseApiUrl}/como-usar/${id}`)
+                .toPromise()
+                .then((resposta: any) => {
+                   return  resposta.json().descricao;
+                });
+    }
+
+
 
    
 }
