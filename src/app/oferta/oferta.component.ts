@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 
 import {OfertasService} from '../ofertas.service';
@@ -9,6 +9,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { Observer } from 'rxjs/Observer';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-oferta',
@@ -18,6 +19,8 @@ import { Observer } from 'rxjs/Observer';
 })
 export class OfertaComponent implements OnInit {
 
+  private tempoObservableSubscription: Subscription;
+  private meuObservableTesteSubscription: Subscription;
   public oferta: Oferta;
   constructor(private route: ActivatedRoute, private ofertasService: OfertasService) {
     
@@ -38,11 +41,11 @@ export class OfertaComponent implements OnInit {
 
         });
       }*/
-      /* let tempo = Observable.interval(2000)
+       let tempo = Observable.interval(2000)
 
-       tempo.subscribe((intervalo: number) => {
+      this.tempoObservableSubscription =  tempo.subscribe((intervalo: number) => {
           console.log(intervalo);
-       });*/
+       });
 
        let meuObservableTeste = Observable.create((observer: Observer<string>) => {
 
@@ -54,10 +57,15 @@ export class OfertaComponent implements OnInit {
 
        });
 
-       meuObservableTeste.subscribe(  
+      this.meuObservableTesteSubscription =  meuObservableTeste.subscribe(  
          (resultado: any) => console.log(resultado),
           (erro: string)  => console.log(erro)
         );
+    }
+
+    public onDestroy(): void {
+      this.meuObservableTesteSubscription.unsubscribe();
+      this.tempoObservableSubscription.unsubscribe();
     }
   
 }
