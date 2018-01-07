@@ -23,6 +23,7 @@ export class TopoComponent implements OnInit {
   ngOnInit() {
     this.ofertas = this.subjectPesquisa
     .debounceTime(1000)
+    .distinctUntilChanged()
     .switchMap((termo: string) => {
       console.log('requisição http para api', termo);
       if (termo.trim() === '') {
