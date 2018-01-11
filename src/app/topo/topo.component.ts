@@ -56,4 +56,8 @@ export class TopoComponent implements OnInit {
 
   }
 
+  public limpaPesquisa() {
+    this.subjectPesquisa.next('');
+  }
+
 }
