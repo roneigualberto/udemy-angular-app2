@@ -12,9 +12,7 @@ export class DescricaoReduzida implements PipeTransform {
         if (texto.length > truncarEm) {
             return texto.substr(0, truncarEm) + '...';
         }
-
         return texto;
-
     }
 
 }
