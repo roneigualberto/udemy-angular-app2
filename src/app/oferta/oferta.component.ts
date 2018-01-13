@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 
 import { OfertasService } from '../ofertas.service';
+import CarrinhoService from '../carrinho.service';
 import { Oferta } from '../shared/oferta.model';
 
 import { ActivatedRoute, Params } from '@angular/router';
@@ -15,14 +16,17 @@ import { Subscription } from 'rxjs/Subscription';
   selector: 'app-oferta',
   templateUrl: './oferta.component.html',
   styleUrls: ['./oferta.component.css'],
-  providers: [OfertasService]
+  providers: [OfertasService, CarrinhoService]
 })
 export class OfertaComponent implements OnInit {
 
   private tempoObservableSubscription: Subscription;
   private meuObservableTesteSubscription: Subscription;
   public oferta: Oferta;
-  constructor(private route: ActivatedRoute, private ofertasService: OfertasService) {
+  constructor(private route: ActivatedRoute,
+              private ofertasService: OfertasService,
+              private carrinhoService: CarrinhoService
+            ) {
 
   }
 
@@ -32,6 +36,8 @@ export class OfertaComponent implements OnInit {
         this.oferta = oferta;
       });
     });
+
+    this.carrinhoService.exibirItens();
   }
 
   public onDestroy(): void {
