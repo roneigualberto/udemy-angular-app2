@@ -60,7 +60,9 @@
       </div>
       <br />
 
-      <pre>{{formulario.value | json}}</pre>
+      <pre>Valido = {{formulario.valid | json}}</pre>
+      <pre>Invalido = {{formulario.invalid | json}}</pre>
+      <pre>Value = {{formulario.value | json}}</pre>
       <h5>Dados de entrega</h5>
       <hr />
 
@@ -75,6 +77,8 @@
                minlength="5" 
                required
                name="endereco"
+               minlength="3"
+               maxlength="20"
                ngModel
                >
           <small class="form-text text-danger">Endereço inválido</small>
@@ -106,7 +110,7 @@
       <div class="form-row">
 
         <div class="form-group col-md-3">
-          <select class="form-control is-invalid"  name="formaPagamento"
+          <select class="form-control is-invalid"  name="formaPagamento" required
           ngModel>
             <option value="">Selecione uma opção</option>
             <option value="dinheiro">Dinheiro</option>
