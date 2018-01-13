@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID} from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import { HttpModule} from '@angular/http';
-import { RouterModule} from '@angular/router';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
-import {ROUTES} from './app.routes';
+import { ROUTES } from './app.routes';
 
 
 import { AppComponent } from './app.component';
@@ -44,10 +45,11 @@ registerLocaleData(localePt);
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt'}],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
