@@ -241,6 +241,13 @@
       "complemento": "asdfasdf",
       "formaPagamento": "dinheiro",
       "id": 8
+    },
+    {
+      "endereco": "sdsdfsdf",
+      "numero": "sdsdf",
+      "complemento": "sdfsdsdf",
+      "formaPagamento": "debito",
+      "id": 9
     }
   ]
 }
