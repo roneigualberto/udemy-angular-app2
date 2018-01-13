@@ -26,7 +26,7 @@ export class OrdemCompraService {
                 headers: headers
             })
         ).map((resposta: Response) => {
-            return resposta.json();
+            return resposta.json().id;
         })
     }
 }
