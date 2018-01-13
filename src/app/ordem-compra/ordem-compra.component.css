@@ -10,3 +10,9 @@ input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
 input.ng-valid.ng-touched, select.ng-valid.ng-touched {
     border: 1px solid green;
 }
+
+.item-carrinho {
+    background: #FAFAFA;
+    padding: 20px;
+    border-bottom: solid 1px #F0F0F0;
+}

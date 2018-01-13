@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrdemCompraService } from '../ordem-compra.service'
 import { CarrinhoService } from '../carrinho.service';
 import { Pedido } from '../shared/pedido.model'
+import { ItemCarrinho } from '../shared/item-carrinho.model'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -11,6 +12,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   providers: [OrdemCompraService]
 })
 export class OrdemCompraComponent implements OnInit {
+
+  public itensCarrinho: ItemCarrinho[] = [];
 
 
   public idPedidoCompra: number;
@@ -25,7 +28,7 @@ export class OrdemCompraComponent implements OnInit {
     private carrinhoService: CarrinhoService) { }
 
   ngOnInit() {
-    this.carrinhoService.exibirItens();
+   this.itensCarrinho =  this.carrinhoService.exibirItens();
   }
 
   public confirmarCompra(): void {
