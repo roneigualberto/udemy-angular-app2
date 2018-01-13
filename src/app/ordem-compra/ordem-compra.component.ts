@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { OrdemCompraService} from '../ordem-compra.service';
+import { OrdemCompraService } from '../ordem-compra.service';
 
 @Component({
   selector: 'app-ordem-compra',
   templateUrl: './ordem-compra.component.html',
   styleUrls: ['./ordem-compra.component.css'],
-  providers : [OrdemCompraService]
+  providers: [OrdemCompraService]
 })
 export class OrdemCompraComponent implements OnInit {
 
@@ -33,7 +33,7 @@ export class OrdemCompraComponent implements OnInit {
   constructor(private ordemCompraService: OrdemCompraService) { }
 
   ngOnInit() {
-    this.ordemCompraService.efetivarCompra();
+  //  this.ordemCompraService.efetivarCompra();
   }
 
   public atualizaEndereco(endereco: string) {
@@ -68,7 +68,7 @@ export class OrdemCompraComponent implements OnInit {
     this.complementoEstadoPrimitivo = false;
     if (this.complemento.length > 0) {
       this.complementoValido = true;
-    } 
+    }
     this.habilitaForm();
   }
 
@@ -77,7 +77,7 @@ export class OrdemCompraComponent implements OnInit {
     this.formaPagamentoEstadoPrimitivo = false;
     if (this.formaPagamento.length > 0) {
       this.formaPagamentoValido = true;
-    }  else {
+    } else {
       this.formaPagamentoValido = false;
     }
     this.habilitaForm();
@@ -87,7 +87,7 @@ export class OrdemCompraComponent implements OnInit {
     if (this.enderecoValido === true && this.numeroValido === true && this.formaPagamentoValido === true) {
       this.formEstado = '';
     } else {
-      this.formEstado  = 'disabled';
+      this.formEstado = 'disabled';
     }
   }
 

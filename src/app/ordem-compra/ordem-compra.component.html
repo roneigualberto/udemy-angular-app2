@@ -122,7 +122,8 @@
       <div class="form-row">
 
         <div class="form-group col-md-3">
-          <select class="form-control {{formaPagamentoEstadoPrimitivo ? '' : formaPagamentoValido ? 'is-valid' : 'is-invalid'}}" #selectFormaPagamento (change)="atualizaFormaPagamento(selectFormaPagamento.value)">
+          <select class="form-control {{formaPagamentoEstadoPrimitivo ? '' : formaPagamentoValido ? 'is-valid' : 'is-invalid'}}" #selectFormaPagamento
+            (change)="atualizaFormaPagamento(selectFormaPagamento.value)">
             <option value="">Selecione uma opção</option>
             <option value="dinheiro" selected="{{formaPagamento == 'dinheiro' ? 'selected' : ''}}">Dinheiro</option>
             <option value="debito" selected="{{formaPagamento == 'debito' ? 'selected' : ''}}">Débito</option>
