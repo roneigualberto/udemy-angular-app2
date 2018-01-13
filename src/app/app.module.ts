@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 //import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { CarrinhoService } from './carrinho.service';
+
 import { ROUTES } from './app.routes';
 
 
@@ -49,7 +51,7 @@ registerLocaleData(localePt);
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' }, CarrinhoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
