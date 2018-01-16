@@ -53,6 +53,16 @@ export class CarrinhoService {
             itemCarrinhoEncontrado.quantidade++;
         }
     }
+
+    public diminuirQuantidade(itemCarrinho: ItemCarrinho): void {
+        console.log('item', itemCarrinho);
+
+        let itemCarrinhoEncontrado = this.buscarPorId(itemCarrinho.id);
+
+        if (itemCarrinhoEncontrado && itemCarrinhoEncontrado.quantidade > 1) {
+            itemCarrinhoEncontrado.quantidade--;
+        }
+    }
 }
 
 
