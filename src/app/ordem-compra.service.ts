@@ -4,6 +4,7 @@ import { Pedido } from './shared/pedido.model';
 import { Observable } from 'rxjs/Observable';
 import {environment} from '../environments/environment';
 import { Response } from '@angular/http/src/static_response';
+import { ItemCarrinho } from './shared/item-carrinho.model';
 
 @Injectable()
 export class OrdemCompraService {
@@ -29,4 +30,6 @@ export class OrdemCompraService {
             return resposta.json().id;
         })
     }
+
+   
 }

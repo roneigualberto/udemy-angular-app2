@@ -20,7 +20,7 @@ export class CarrinhoService {
             oferta.valor,
             1
         );
-       let itemCarrinhoEncontrado =  this.itens.find((item: ItemCarrinho) =>  item.id === itemCarrinho.id);
+       let itemCarrinhoEncontrado = this.buscarPorId(itemCarrinho.id);
        if (itemCarrinhoEncontrado) {
             itemCarrinhoEncontrado.quantidade++;
        } else {
@@ -28,6 +28,10 @@ export class CarrinhoService {
        }
        
        
+    }
+
+    public buscarPorId(id: number): ItemCarrinho {
+        return  this.itens.find((item: ItemCarrinho) =>  item.id === id);
     }
 
     public totalCarrinhoCompras(): number {
@@ -38,6 +42,16 @@ export class CarrinhoService {
         });
 
         return total;
+    }
+
+    public adicionarQuantidade(itemCarrinho: ItemCarrinho): void {
+        console.log('item', itemCarrinho);
+
+        let itemCarrinhoEncontrado = this.buscarPorId(itemCarrinho.id);
+
+        if (itemCarrinhoEncontrado) {
+            itemCarrinhoEncontrado.quantidade++;
+        }
     }
 }
 
