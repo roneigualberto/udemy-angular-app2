@@ -248,6 +248,35 @@
       "complemento": "sdfsdsdf",
       "formaPagamento": "debito",
       "id": 9
+    },
+    {
+      "endereco": "dfad",
+      "numero": "asdfasd",
+      "complemento": "asdfasdf",
+      "formaPagamento": "debito",
+      "itens": [
+        {
+          "id": 1,
+          "img": {
+            "url": "/assets/ofertas/1/img1.jpg"
+          },
+          "titulo": "Super Burger",
+          "descricao_oferta": "Rodízio de Mini-hambúrger com opção de entrada.",
+          "valor": 29.9,
+          "quantidade": 4
+        },
+        {
+          "id": 2,
+          "img": {
+            "url": "/assets/ofertas/2/img1.jpg"
+          },
+          "titulo": "Cozinha Mexicana",
+          "descricao_oferta": "Almoço ou Jantar com Rodízio Mexicano delicioso.",
+          "valor": 32.9,
+          "quantidade": 2
+        }
+      ],
+      "id": 10
     }
   ]
 }
